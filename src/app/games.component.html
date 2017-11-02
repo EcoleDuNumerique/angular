@@ -1,0 +1,10 @@
+<h4> Selected game: {{ selected_game.name }} de {{ selected_game.editor }} </h4>
+<ul>
+    <!-- Je viens répeter la structure du li et de ses enfants en bouclant sur mygames -->
+    <!-- | est un filtre permettant de gérer l'affichage de la variable -->
+    <!-- On change le selected_game lorsqu'on clique dessus -->
+    <li *ngFor="let game of mygames" (click)="selectGame(game)">
+        <h4> {{ game.name | uppercase }} </h4>
+        <p><i> Editor: {{ game.editor | lowercase }} </i></p>
+    </li>
+</ul>
